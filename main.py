@@ -32,7 +32,7 @@ def multi_gpu_test(args):
 
     # Display Config
     print("Starting GPU Stress Test With The Following Configuration: " +
-           "Number of GPUs: {}\nNumber of Workers: {}\nBatch Size: {}\nNumber of Epochs: {}"
+           "\nNumber of GPUs: {}\nNumber of Workers: {}\nBatch Size: {}\nNumber of Epochs: {}"
            .format(args.num_gpus, args.num_workers, args.batch_size, args.num_epochs))
 
     # Define image transform
@@ -95,6 +95,8 @@ def multi_gpu_test(args):
     # Define Optimizer And Loss Function
     criterion = torch.nn.CrossEntropyLoss()
     optimizer = torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
+
+    print("\nStarted Training:")
 
     # Train Model
     for epoch in range(args.num_epochs):  # loop over the dataset multiple times
