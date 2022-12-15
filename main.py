@@ -20,7 +20,7 @@ import torchvision.transforms as transforms
 def get_args():
     # Parse command line arguments
     parser = argparse.ArgumentParser()
-    parser.add_argument('-bs', '--batch_size', type=str, default=8)
+    parser.add_argument('-bs', '--batch_size', type=int, default=8)
     parser.add_argument('-nw', '--num_workers', type=int, default=0)
     parser.add_argument('-ng', '--num_gpus', type=int, default=0)
     parser.add_argument('-ne', '--num_epochs', type=int, default=10)
