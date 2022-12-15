@@ -86,7 +86,7 @@ def multi_gpu_test(args):
         if args.num_gpus <=  torch.cuda.device_count():
             device = torch.cuda.current_device()
             model = torch.nn.DataParallel(model, 
-                device_ids=["cuda:{}".format(i) for i in range(torch.cuda.device_count())]).to(device)
+                device_ids=["cuda:{}".format(i) for i in range(args.num_gpus)]).to(device)
         else:
             raise Exception("Num GPUs specified ({}) is greater than the number available {}".format(
                 args.num_gpus, torch.cuda.device_count()
